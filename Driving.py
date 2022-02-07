@@ -3,18 +3,18 @@ from random import random
 
 
 def drive():
-    distance_traveled = 0
+    dist_traveled = 0
     current_city = cities['A']
     while current_city != cities['P']:
         choice = random()
         neighboring_cities = current_city['neighbors']  
         if choice <= current_city[neighboring_cities[0]]['prob']:
-            distance_traveled += current_city[neighboring_cities[0]]['distance']
+            dist_traveled += current_city[neighboring_cities[0]]['distance']
             current_city = cities[neighboring_cities[0]]
         else:
-            distance_traveled += current_city[neighboring_cities[1]]['distance']
+            dist_traveled += current_city[neighboring_cities[1]]['distance']
             current_city = cities[neighboring_cities[1]]
-    return distance_traveled
+    return dist_traveled
 
 
 
